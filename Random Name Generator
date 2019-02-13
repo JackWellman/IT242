@@ -12,34 +12,45 @@
 
     var firstName = [];
     firstName.push('Jack');
-    firstName.push('John')
-    firstName.push('Alex')
-    firstName.push('Marty')
-    firstName.push('Andrew')
-    firstName.push('Alexis')
-    firstName.push('Sarah')
-    firstName.push('Bri')
-    firstName.push('Natasha')
-    firstName.push('Christy')
+    firstName.push('John');
+    firstName.push('Alex');
+    firstName.push('Marty');
+    firstName.push('Andrew');
+    firstName.push('Alexis');
+    firstName.push('Sarah');
+    firstName.push('Bri');
+    firstName.push('Natasha');
+    firstName.push('Christy');
 
+    var middleName = [];
+    middleName.push('Darryl');
+    middleName.push('Natalie');
+    middleName.push('Grace');
+    middleName.push('Leann');
+    middleName.push('Wendy');
+    middleName.push('Matt');
+    middleName.push('Ben');
+    middleName.push('Daniel');
 
     var lastName = [];
     lastName.push('Wellman');
-    lastName.push('Weasley')
-    lastName.push('Golden')
-    lastName.push('Pruitt')
-    lastName.push('Goodman')
-    lastName.push('Snuggles')
-    lastName.push('Pitfall')
-    lastName.push('Debt')
-    lastName.push('Backerton')
-    lastName.push('Hooverson')
+    lastName.push('Weasley');
+    lastName.push('Golden');
+    lastName.push('Pruitt');
+    lastName.push('Goodman');
+    lastName.push('Snuggles');
+    lastName.push('Pitfall');
+    lastName.push('Debt');
+    lastName.push('Backerton');
+    lastName.push('Hooverson');
 
 
     var firstNameIndex = randomName(firstName.length);
+    var middleNameIndex = randomName(middleName.length);
     var lastNameIndex = randomName(lastName.length);
 
     console.log(firstName[firstNameIndex]);
+    console.log(middleName[middleNameIndex]);
     console.log(lastName[lastNameIndex]);
 
 </script>
