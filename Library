@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+
+<title>The Library</title>
+<meta charset="utf-8">
+
+</head>
+
+<script type="text/javascript">
+
+class LibraryItem{
+
+
+    constructor(itemType,title){
+
+        this.itemType = itemType;
+
+        this.title = title;
+
+    }  
+
+}
+
+
+class Library{
+
+    constructor(){
+
+        this.items = [];
+
+}
+
+    add(){
+
+        var libItem = document.querySelector('#libraryForm');
+
+        var item = this.buildItem(libItem);
+
+        this.items.push(item);
+
+        console.log(this.items);
+
+        console.table(this.items);
+        this.render();
+
+        return false;
+
+        }
+
+        buildItem(frm){
+
+            var itemTypes = frm.querySelector('#selItemType').selectedOptions;
+            return new LibraryItem(itemTypes[0].value,frm.title.value)
+
+           
+        }
+
+        render(){
+ var ul = document.querySelector('#libraryItems');
+            ul.innerHTML = null;
+            this.items.forEach(function(sa){
+
+                var li = document.createElement('li');
+                    li.innerText = `${sa.itemType} ${sa.title}`;
+                    ul.appendChild(li);
+            });
+
+
+        }
+
+        renderItem(item){
+
+        }
+
+}
+
+var JaksLibrary = new Library();
+
+
+</script>
+
+<body>
+
+<h1>Jaks' Library</h1>
+
+<form id="libraryForm">
+
+    <label for="selItemType">Item Type</label>
+
+    <select name="itemType" id="selItemType">
+
+        <option value="Book :">Book</option>
+
+        <option value="Movie :">Movie</option>
+
+        <option value="Game :">Game</option>
+		
+		<option value="Music :">Music</option>
+
+
+
+    </select>
+
+    <label for="txtTitle">Title of Item</label>
+
+    <input type="text" name="title" id="txtTitle">
+
+
+
+    <input type="submit" name="btnAdd" value="Add"
+
+    onClick="return JaksLibrary.add()">
+
+</form>
+
+    <ul id="libraryItems">
+
+   
+
+
+
+    </ul>
+
+    
+
+</body>
+
+</html>
